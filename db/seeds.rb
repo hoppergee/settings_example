@@ -18,6 +18,9 @@ Setting.create!(key: :string_example, data: string)
 float = SettingDataType::Float.new(value: 1.2)
 Setting.create!(key: :float_example, data: float)
 
+boolean = SettingDataType::Boolean.new(value: true)
+Setting.create!(key: :boolean_example, data: boolean)
+
 Setting.find_each do |setting|
   puts "Setting - key: #{setting.key}, value: #{setting.value} (#{setting.value.class})"
 end
