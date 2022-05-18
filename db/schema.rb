@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_063259) do
 
   create_table "settings", force: :cascade do |t|
     t.string "key", null: false
-    t.jsonb "data"
+    t.jsonb "data", default: {}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["key"], name: "index_settings_on_key", unique: true
