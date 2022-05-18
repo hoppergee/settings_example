@@ -12,5 +12,5 @@ string_setting = Setting.create!(key: :string_example, value_type: :string, valu
 decimal_setting = Setting.create!(key: :decimal_example, value_type: :decimal, value: BigDecimal('1.223'))
 
 Setting.find_each do |setting|
-  puts "#{setting.key}: #{setting.value} (#{setting.value.class})"
+  puts "Setting - key: #{setting.key}, value: #{setting.value} (#{setting.value.class})"
 end
