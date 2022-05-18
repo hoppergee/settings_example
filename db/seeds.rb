@@ -7,10 +7,17 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 integer = SettingDataType::Integer.new(value: 1)
-Setting.create!(key: :integer, data: integer)
+Setting.create!(key: :integer_example, data: integer)
 
 decimal = SettingDataType::Decimal.new(value: 1.2)
-Setting.create!(key: :decimal, data: decimal)
+Setting.create!(key: :decimal_example, data: decimal)
 
 string = SettingDataType::String.new(value: '1.2')
-Setting.create!(key: :string, data: string)
+Setting.create!(key: :string_example, data: string)
+
+float = SettingDataType::Float.new(value: 1.2)
+Setting.create!(key: :float_example, data: float)
+
+Setting.find_each do |setting|
+  puts "#{setting.key}: #{setting.value} (#{setting.value.class})"
+end
