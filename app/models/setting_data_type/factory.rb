@@ -1,5 +1,9 @@
 module SettingDataType
   Factory = StoreModel.one_of do |json|
-    "SettingDataType::#{json["type"].classify}".constantize
+    begin
+      "SettingDataType::#{json["type"].classify}".constantize
+    rescue
+      SettingDataType::String
+    end
   end
 end
