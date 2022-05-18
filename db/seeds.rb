@@ -19,5 +19,5 @@ float = SettingDataType::Float.new(value: 1.2)
 Setting.create!(key: :float_example, data: float)
 
 Setting.find_each do |setting|
-  puts "#{setting.key}: #{setting.value} (#{setting.value.class})"
+  puts "Setting - key: #{setting.key}, value: #{setting.value} (#{setting.value.class})"
 end
